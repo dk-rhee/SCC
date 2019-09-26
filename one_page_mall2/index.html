@@ -7,13 +7,21 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap" rel="stylesheet">
     <title>JoMalone</title>
     <style>
-        .product-img {
-            /* background-color: green; */
-            width: 500px;
-            margin: 40px auto;
+        * {
+            font-family: 'Sunflower', sans-serif;
+        }
+        .card-container {
+            width: 800px;
+            /* background-color: black; */
+            margin: 0 auto;
+            margin-bottom: 100px;
+        }
+        .footer {
             text-align: center;
+            margin-bottom: 100px;
         }
     </style>
 </head>
@@ -26,15 +34,56 @@
         </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
-    <img src="product-images/pic01.png" class="card-img-top" alt="허니서클 앤 다바나 코롱">
-    <div class="card-body">
-        <h5 class="card-title">허니서클 앤 다바나 코롱</h5>
-        <p class="card-text">영국 시골 마을의 바람을 따라 물결치듯이 피어오르는 허니서클. 짙은 어둠 속에서 더욱 매력적으로 빛납니다. 프루티한 반전을 지닌 다바나의 아로마 향에 로즈 향이 가미되어 더욱 신선해지고, 모스는 향에 우디함을 더해주며, 햇살을 듬뿍 머금어 따스해집니다. 선명하고 화사하며, 즐거움을 표현하는 향입니다.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div>
+    <div class="card-container">
+        <div class="card" style="width: 100%;">
+            <img src="product-images/pic01.png" class="card-img-top" alt="허니서클 앤 다바나 코롱">
+            <div class="card-body">
+                <h5 class="card-title">허니서클 앤 다바나 코롱</h5>
+                <div style="text-align: right;"><span class="badge badge-dark">가격: 188,000원/1개</span></div>
+                <p class="card-text">영국 시골 마을의 바람을 따라 물결치듯이 피어오르는 허니서클. 짙은 어둠 속에서 더욱 매력적으로 빛납니다. 프루티한 반전을 지닌 다바나의 아로마 향에 로즈 향이 가미되어 더욱 신선해지고, 모스는 향에 우디함을 더해주며, 햇살을 듬뿍 머금어 따스해집니다. 선명하고 화사하며, 즐거움을 표현하는 향입니다.</p>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">주문자 성함</label>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+               
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">수량</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option value="1">1 개</option>
+                        <option value="2">2 개</option>
+                        <option value="3">3 개</option>
+                    </select>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">주소</label>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Address" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+
+                <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text" for="inputGroupSelect01">전화번호</label>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Cellphone" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+
+                <div style="text-align: center;"><a href="#!" class="btn btn-dark">Go somewhere</a></div>
+            </div>
+        </div>
+
     </div>
 
+    <div class="footer">
+        &copy;&nbsp;bigadmin.org
+    </div>
 
 </body>
 </html>

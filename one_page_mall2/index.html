@@ -8,6 +8,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Sunflower:300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" style="user-select: auto;"></script>
+    <script src="index.js"></script>
     <title>JoMalone</title>
     <style>
         * {
@@ -22,6 +24,9 @@
         .btn-order {
             width: 300px;
             margin: 0 auto;
+        }
+        .orders {
+            margin-top: 50px;
         }
         .footer {
             text-align: center;
@@ -48,16 +53,16 @@
                 
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect01">주문자 성함</label>
+                        <label class="input-group-text" for="inputGroupSelect01">주문자 이름</label>
                     </div>
-                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input id="order_name" type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
                 </div>
                
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">수량</label>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect01">
+                    <select id="order_count" class="custom-select" id="inputGroupSelect01">
                         <option selected>Choose...</option>
                         <option value="1">1 개</option>
                         <option value="2">2 개</option>
@@ -69,18 +74,43 @@
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">주소</label>
                     </div>
-                    <input type="text" class="form-control" placeholder="Address" aria-label="Username" aria-describedby="addon-wrapping">
+                    <input id="order_address" type="text" class="form-control" placeholder="Address" aria-label="Username" aria-describedby="addon-wrapping">
                 </div>
 
                 <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <label class="input-group-text" for="inputGroupSelect01">전화번호</label>
                         </div>
-                        <input type="text" class="form-control" placeholder="Cellphone" aria-label="Username" aria-describedby="addon-wrapping">
+                        <input id="order_phone" type="text" class="form-control" placeholder="Cellphone" aria-label="Username" aria-describedby="addon-wrapping">
                     </div>
 
-                <div style="text-align: center;"><a href="#!" class="btn btn-dark btn-order">주문 하기</a></div>
+                <!-- <div style="text-align: center;"><a href="#!" class="btn btn-dark btn-order">주문 하기</a></div> -->
+                <div style="text-align: center;"><button type="button" class="btn btn-dark" onclick="order()">주문 하기</button></div>
             </div>
+        </div>
+
+        <div class="orders">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>상품명</th>
+                        <th>이름</th>
+                        <th>수량</th>
+                        <th>주소</th>
+                        <th>전화번호</th>
+                    </tr>
+                </thead>
+                <tbody id="orders-table" class="orders-box">
+                    <!-- ordered list -->
+                    <!-- <tr>
+                        <td>허니서클 앤 다바나 코롱</td>
+                        <td>이동균</td>
+                        <td>3개</td>
+                        <td>서울시 강서구 공항대로 124 1103-504</td>
+                        <td>010-9057-6907</td>
+                    </tr> -->
+                </tbody>
+            </table>
         </div>
 
     </div>
@@ -88,6 +118,5 @@
     <div class="footer">
         &copy;&nbsp;bigadmin.org
     </div>
-
 </body>
 </html>

@@ -23,8 +23,8 @@ charts = soup.select('#body-content > div.newest-list > div > table > tbody > tr
 for chart in charts:
     title = chart.select_one('td.info > a.title.ellipsis')
     if not title == None:
-        title = title.text
-        artist = chart.select_one('td.info > a.artist.ellipsis').text
+        title = title.text.strip()
+        artist = chart.select_one('td.info > a.artist.ellipsis').text.strip()
         doc = {
             'rank': rank,
             'artist': artist,
@@ -39,7 +39,7 @@ top200 = list(db.top200.find())
 
 for top in top200:
     rank = top['rank']
-    artist = top['artist'].strip()
-    title = top['title'].strip()
+    artist = top['artist']
+    title = top['title']
     print('순위: {}, 가수: {}, 제목: {}'.format(rank, artist, title))
 
